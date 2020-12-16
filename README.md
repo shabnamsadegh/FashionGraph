@@ -10,14 +10,19 @@ Our Novel contributions:
  - We showed how Fashiongraph can improve the search and retrieval of fashion images.
 
 ## Dataset
-This project is trained on Fashionpedia dataset downloaded from the [kaggle competition, iMaterialist 2020,](https://www.kaggle.com/c/imaterialist-fashion-2020-fgvc7/overview) "Fine-grained segmentation task for fashion and apparel"
-More information about the objects and predicates can be found in [their paper](https://arxiv.org/abs/2004.12276)
-For Downloading the data, you have to agree to their condition. Then if you send [me](sadegh.shabnam@gmail.com) a screenshot that you have access to the Kaggle data, I will send you the complementary annotations needed for this project.
+This project is trained on Fashionpedia dataset downloaded from the [kaggle competition, iMaterialist 2020,](https://www.kaggle.com/c/imaterialist-fashion-2020-fgvc7/overview) "Fine-grained segmentation task for fashion and apparel".
+
+More information about the objects and predicates can be found in [their paper](https://arxiv.org/abs/2004.12276).
+
+For Downloading the data, you have to agree to their condition. Then if you send [me](mailto:sadegh.shabnam@gmail.com) a screenshot that you have access to the Kaggle data, I will send you the complementary annotations needed for this project.
 
 ## How it works
 RELDN SG generator is trained on triplets of object-predicate-subject and their positions in an image. Where object and subject are segments in an image and their connection(predicate) is learned by the model. The predicate [in conventional SG] is the type of interaction between object and subject (e.g. positions such as behind, in front of, ... or actions such as holding, sitting,...). 
-an example of a triplet is: Man[sbj] Sitting-on[predicate] Chair[obj]
+
+An example of a triplet is: Man[sbj] Sitting-on[predicate] Chair[obj]
+
 The same applies to clothing hierarchy(without attributes): 
+
 Pocket[subject] belongs-to[predicate] Skirt[object]. (how we drive these triplets in our dataset? refer to our paper)
 
 For the attributes, the story is different. Intuitively you may think of it as a triplet: Skirt[sub] is[predicate] A-line[object] or Neckline[sub] is[predicate] Plunging[obj]. However, the problem is an attribute is not a segment in an image. To tackle this problem, we annotate the attributes as the following: 
