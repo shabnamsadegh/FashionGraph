@@ -30,16 +30,16 @@ Howevert Fashiongraph is looking for different relationships between the objects
    - ```Pocket[sbj] belongs-to[predicate] Skirt[obj]. ```
 
 2. **Attributes and colors**
-In this case we cannot assume the predicates as Skirt[subj] is[predicate] A-line[object]. Because A-line is not a segment in an image (can you find "beautiful" in an image of mountains?). Instead we annotate the attributes as predicates:
+In this case we cannot assume the predicates as Skirt[subj] is[predicate] A-line[object]. Because A-line is not a segment in an image (can you find "beautiful" in an image of mountains?). Instead, we annotate the attributes as predicates:
    - ```Skirt[sbj] A-line[predicate] Skirt[obj]```, if the subject is a main clothing part 
    - ```Neckline[sbj] plunging[predicate] Dress[obj]```, when subject has a parent e.g. neckline beongs to dress.
 
 ## Model
 This work is heavily based on [RELDN repository](https://github.com/NVIDIA/ContrastiveLosses4VRD). 
-We used their code to train an object detection model for imaterialist fashion dataset (their obj detection model is based on detectron). 
+We used their code to train an object detection model specific for fashionpedia (their obj detection model is based on detectron). 
 Then we trained their SGDET model on the relationships we had derived from the original dataset.
 
-Therefore to train our model from skratch or predict SG for a fashion image, follow these steps:
+Therefore to train our model from scratch or predict SG for a fashion image, follow these steps:
 
 - Follow the instruction of [RELDN for installation](https://github.com/NVIDIA/ContrastiveLosses4VRD).
 - If you want to train on a new dataset, you may want to check the changes I made in [my fork of RELDN](https://github.com/shabnamsadegh/ContrastiveLosses4VRD) (unfortunately, RELDN has hardcoded database-related parts all over their code. hopefully my fork would help to figure that out.)
